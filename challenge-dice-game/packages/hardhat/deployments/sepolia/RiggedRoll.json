@@ -1,0 +1,150 @@
+{
+  "address": "0x8f7E9463285855a8648Cfa26C15358d82596807C",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "diceAddress",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [],
+      "name": "diceGame",
+      "outputs": [
+        {
+          "internalType": "contract IDiceGame",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "riggedRoll",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "rollPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "transactionHash": "0xe02ebef3d5443770eca00284ef6fd4ffd8cac97b3a568c8f3ba74b92e9586700",
+  "receipt": {
+    "to": null,
+    "from": "0x9F7E09006102f52E5daaA5A65EA62288011767d4",
+    "contractAddress": "0x8f7E9463285855a8648Cfa26C15358d82596807C",
+    "transactionIndex": 113,
+    "gasUsed": "274637",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0x423420d312483faaf4faffd78a6b8b059a7cfc357bc44e2b05b902afb7dd7bd8",
+    "transactionHash": "0xe02ebef3d5443770eca00284ef6fd4ffd8cac97b3a568c8f3ba74b92e9586700",
+    "logs": [],
+    "blockNumber": 9312446,
+    "cumulativeGasUsed": "13443867",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0xA2c56aFA7b0dAD8fe4874431e4e918dbD63D8ed4"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "9a29e4b583cf4edb982dee8641bbe037",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"diceAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"diceGame\",\"outputs\":[{\"internalType\":\"contract IDiceGame\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"riggedRoll\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"rollPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/RiggedRoll.sol\":\"RiggedRoll\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/RiggedRoll.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.20;\\n\\ninterface IDiceGame {\\n    function rollTheDice() external payable;\\n}\\n\\ncontract RiggedRoll {\\n    address public owner;\\n    IDiceGame public diceGame; // \\u2705 rename agar getter sesuai test\\n    uint256 public constant rollPrice = 0.002 ether;\\n\\n    constructor(address diceAddress) {\\n        owner = msg.sender;\\n        diceGame = IDiceGame(diceAddress);\\n    }\\n\\n    receive() external payable {}\\n\\n    function riggedRoll() external {\\n        uint256 predicted = uint256(blockhash(block.number - 1)) % 16;\\n\\n        // \\u2705 sesuai challenge: menang jika <= 5\\n        if (predicted <= 5) {\\n            diceGame.rollTheDice{value: rollPrice}();\\n        } else {\\n            revert(\\\"Not a winning roll\\\");\\n        }\\n    }\\n\\n    // \\u2705 signature sesuai test\\n    function withdraw(address to, uint256 amount) external {\\n        require(msg.sender == owner, \\\"only owner\\\");\\n        payable(to).transfer(amount);\\n    }\\n}\\n\",\"keccak256\":\"0xc5c80dc59a67ced39b28089f5596f08ba0729542f83f1b3b001c7413575b0401\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516103ca3803806103ca83398101604081905261002f91610062565b60008054336001600160a01b031991821617909155600180549091166001600160a01b0392909216919091179055610092565b60006020828403121561007457600080fd5b81516001600160a01b038116811461008b57600080fd5b9392505050565b610329806100a16000396000f3fe60806040526004361061004e5760003560e01c80636b5e97f81461005a5780638da5cb5b146100715780638e288fd1146100ae578063cf3af3a1146100ce578063f3fef3a3146100f757600080fd5b3661005557005b600080fd5b34801561006657600080fd5b5061006f610117565b005b34801561007d57600080fd5b50600054610091906001600160a01b031681565b6040516001600160a01b0390911681526020015b60405180910390f35b3480156100ba57600080fd5b50600154610091906001600160a01b031681565b3480156100da57600080fd5b506100e966071afd498d000081565b6040519081526020016100a5565b34801561010357600080fd5b5061006f610112366004610272565b6101f0565b600060106101266001436102aa565b6101319190406102d1565b9050600581116101ae57600160009054906101000a90046001600160a01b03166001600160a01b0316637d789dee66071afd498d00006040518263ffffffff1660e01b81526004016000604051808303818588803b15801561019257600080fd5b505af11580156101a6573d6000803e3d6000fd5b505050505050565b60405162461bcd60e51b8152602060048201526012602482015271139bdd0818481dda5b9b9a5b99c81c9bdb1b60721b60448201526064015b60405180910390fd5b6000546001600160a01b031633146102375760405162461bcd60e51b815260206004820152600a60248201526937b7363c9037bbb732b960b11b60448201526064016101e7565b6040516001600160a01b0383169082156108fc029083906000818181858888f1935050505015801561026d573d6000803e3d6000fd5b505050565b6000806040838503121561028557600080fd5b82356001600160a01b038116811461029c57600080fd5b946020939093013593505050565b818103818111156102cb57634e487b7160e01b600052601160045260246000fd5b92915050565b6000826102ee57634e487b7160e01b600052601260045260246000fd5b50069056fea2646970667358221220f4bffe4aaa793046c65f977cbe1777d422345c24d1fcdaf62c2d74a136c9122664736f6c63430008140033",
+  "deployedBytecode": "0x60806040526004361061004e5760003560e01c80636b5e97f81461005a5780638da5cb5b146100715780638e288fd1146100ae578063cf3af3a1146100ce578063f3fef3a3146100f757600080fd5b3661005557005b600080fd5b34801561006657600080fd5b5061006f610117565b005b34801561007d57600080fd5b50600054610091906001600160a01b031681565b6040516001600160a01b0390911681526020015b60405180910390f35b3480156100ba57600080fd5b50600154610091906001600160a01b031681565b3480156100da57600080fd5b506100e966071afd498d000081565b6040519081526020016100a5565b34801561010357600080fd5b5061006f610112366004610272565b6101f0565b600060106101266001436102aa565b6101319190406102d1565b9050600581116101ae57600160009054906101000a90046001600160a01b03166001600160a01b0316637d789dee66071afd498d00006040518263ffffffff1660e01b81526004016000604051808303818588803b15801561019257600080fd5b505af11580156101a6573d6000803e3d6000fd5b505050505050565b60405162461bcd60e51b8152602060048201526012602482015271139bdd0818481dda5b9b9a5b99c81c9bdb1b60721b60448201526064015b60405180910390fd5b6000546001600160a01b031633146102375760405162461bcd60e51b815260206004820152600a60248201526937b7363c9037bbb732b960b11b60448201526064016101e7565b6040516001600160a01b0383169082156108fc029083906000818181858888f1935050505015801561026d573d6000803e3d6000fd5b505050565b6000806040838503121561028557600080fd5b82356001600160a01b038116811461029c57600080fd5b946020939093013593505050565b818103818111156102cb57634e487b7160e01b600052601160045260246000fd5b92915050565b6000826102ee57634e487b7160e01b600052601260045260246000fd5b50069056fea2646970667358221220f4bffe4aaa793046c65f977cbe1777d422345c24d1fcdaf62c2d74a136c9122664736f6c63430008140033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 7,
+        "contract": "contracts/RiggedRoll.sol:RiggedRoll",
+        "label": "owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 10,
+        "contract": "contracts/RiggedRoll.sol:RiggedRoll",
+        "label": "diceGame",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_contract(IDiceGame)5"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_contract(IDiceGame)5": {
+        "encoding": "inplace",
+        "label": "contract IDiceGame",
+        "numberOfBytes": "20"
+      }
+    }
+  }
+}

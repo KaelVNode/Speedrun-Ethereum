@@ -1,0 +1,243 @@
+{
+  "address": "0x634c2959BB6efC5a8472832B77ee1AA2A687D793",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "externalContractAddress",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "staker",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "Stake",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "balances",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "deadline",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "exampleExternalContract",
+      "outputs": [
+        {
+          "internalType": "contract ExampleExternalContract",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "execute",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "openForWithdraw",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "stake",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "threshold",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "timeLeft",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "withdraw",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ],
+  "transactionHash": "0x14d794900f2c5045e0de2a5d13b963bb694100016178b0bfb3a820e0677c5ecd",
+  "receipt": {
+    "to": null,
+    "from": "0x9F7E09006102f52E5daaA5A65EA62288011767d4",
+    "contractAddress": "0x634c2959BB6efC5a8472832B77ee1AA2A687D793",
+    "transactionIndex": 149,
+    "gasUsed": "529857",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xe1f952725f5ef84447a1dc25105b354538ce58fb63e01b4d376686932ed288fc",
+    "transactionHash": "0x14d794900f2c5045e0de2a5d13b963bb694100016178b0bfb3a820e0677c5ecd",
+    "logs": [],
+    "blockNumber": 9311871,
+    "cumulativeGasUsed": "46095610",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x26477b146144722b8C154f649b5Fb4968193DeE3"
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "8649fb0083d379dd004fa9da25f08a45",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"externalContractAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"staker\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Stake\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"balances\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"deadline\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"exampleExternalContract\",\"outputs\":[{\"internalType\":\"contract ExampleExternalContract\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"execute\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"openForWithdraw\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"stake\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"threshold\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"timeLeft\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/Staker.sol\":\"Staker\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/ExampleExternalContract.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.20; //Do not change the solidity version as it negatively impacts submission grading\\n\\ncontract ExampleExternalContract {\\n    bool public completed;\\n\\n    function complete() public payable {\\n        completed = true;\\n    }\\n}\\n\",\"keccak256\":\"0x9d7b4fb853a08a242fd15aab47631e4df4b6a455c781c84a77e5888b9badf359\",\"license\":\"MIT\"},\"contracts/Staker.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.0;\\n\\nimport \\\"./ExampleExternalContract.sol\\\";\\n\\ncontract Staker {\\n    ExampleExternalContract public exampleExternalContract;\\n\\n    mapping(address => uint256) public balances;\\n    uint256 public constant threshold = 1 ether;\\n    uint256 public deadline;\\n    bool public openForWithdraw;\\n\\n    event Stake(address indexed staker, uint256 amount);\\n\\n    constructor(address externalContractAddress) {\\n        exampleExternalContract = ExampleExternalContract(externalContractAddress);\\n        deadline = block.timestamp + 30 seconds; // buat testing cepat\\n        openForWithdraw = false;\\n    }\\n\\n    modifier beforeDeadline() {\\n        require(block.timestamp < deadline, \\\"Deadline passed\\\");\\n        _;\\n    }\\n\\n    modifier afterDeadline() {\\n        require(block.timestamp >= deadline, \\\"Still before deadline\\\");\\n        _;\\n    }\\n\\n    modifier notCompleted() {\\n        require(!exampleExternalContract.completed(), \\\"Already completed\\\");\\n        _;\\n    }\\n\\n    function stake() public payable beforeDeadline notCompleted {\\n        require(msg.value > 0, \\\"Must send ETH\\\");\\n        balances[msg.sender] += msg.value;\\n        emit Stake(msg.sender, msg.value);\\n    }\\n\\n    function execute() public afterDeadline notCompleted {\\n        uint256 contractBalance = address(this).balance;\\n        if (contractBalance >= threshold) {\\n            exampleExternalContract.complete{value: contractBalance}();\\n        } else {\\n            openForWithdraw = true;\\n        }\\n    }\\n\\n    function withdraw() public afterDeadline notCompleted {\\n        require(openForWithdraw, \\\"Withdrawals not open\\\");\\n        uint256 userBal = balances[msg.sender];\\n        require(userBal > 0, \\\"No balance\\\");\\n        balances[msg.sender] = 0;\\n        (bool sent, ) = payable(msg.sender).call{value: userBal}(\\\"\\\");\\n        require(sent, \\\"Withdraw failed\\\");\\n    }\\n\\n    function timeLeft() public view returns (uint256) {\\n        if (block.timestamp >= deadline) return 0;\\n        return deadline - block.timestamp;\\n    }\\n\\n    receive() external payable {\\n        stake();\\n    }\\n}\\n\",\"keccak256\":\"0x24c07494a7afc0e873d10fbb8f70e6f22efe54ef457d0a34ca28f4a1f2915bf3\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161088738038061088783398101604081905261002f91610068565b600080546001600160a01b0319166001600160a01b03831617905561005542601e610098565b600255506003805460ff191690556100bf565b60006020828403121561007a57600080fd5b81516001600160a01b038116811461009157600080fd5b9392505050565b808201808211156100b957634e487b7160e01b600052601160045260246000fd5b92915050565b6107b9806100ce6000396000f3fe60806040526004361061008a5760003560e01c80633ccfd60b116100595780633ccfd60b1461011157806342cde4e81461012657806361461954146101425780639876a643146101575780639f75f2271461018157600080fd5b80631300a6d11461009e57806327e235e3146100c657806329dcb0cf146100f35780633a4b66f11461010957600080fd5b36610099576100976101b9565b005b600080fd5b3480156100aa57600080fd5b506100b361032e565b6040519081526020015b60405180910390f35b3480156100d257600080fd5b506100b36100e13660046106c4565b60016020526000908152604090205481565b3480156100ff57600080fd5b506100b360025481565b6100976101b9565b34801561011d57600080fd5b50610097610352565b34801561013257600080fd5b506100b3670de0b6b3a764000081565b34801561014e57600080fd5b5061009761055e565b34801561016357600080fd5b506003546101719060ff1681565b60405190151581526020016100bd565b34801561018d57600080fd5b506000546101a1906001600160a01b031681565b6040516001600160a01b0390911681526020016100bd565b60025442106102015760405162461bcd60e51b815260206004820152600f60248201526e111958591b1a5b99481c185cdcd959608a1b60448201526064015b60405180910390fd5b60008054906101000a90046001600160a01b03166001600160a01b0316639d9a7fe96040518163ffffffff1660e01b8152600401602060405180830381865afa158015610252573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061027691906106f4565b156102935760405162461bcd60e51b81526004016101f890610716565b600034116102d35760405162461bcd60e51b815260206004820152600d60248201526c09aeae6e840e6cadcc8408aa89609b1b60448201526064016101f8565b33600090815260016020526040812080543492906102f2908490610757565b909155505060405134815233907febedb8b3c678666e7f36970bc8f57abf6d8fa2e828c0da91ea5b75bf68ed101a9060200160405180910390a2565b6000600254421061033f5750600090565b4260025461034d9190610770565b905090565b60025442101561039c5760405162461bcd60e51b81526020600482015260156024820152745374696c6c206265666f726520646561646c696e6560581b60448201526064016101f8565b60008054906101000a90046001600160a01b03166001600160a01b0316639d9a7fe96040518163ffffffff1660e01b8152600401602060405180830381865afa1580156103ed573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061041191906106f4565b1561042e5760405162461bcd60e51b81526004016101f890610716565b60035460ff166104775760405162461bcd60e51b81526020600482015260146024820152732bb4ba34323930bbb0b639903737ba1037b832b760611b60448201526064016101f8565b33600090815260016020526040902054806104c15760405162461bcd60e51b815260206004820152600a6024820152694e6f2062616c616e636560b01b60448201526064016101f8565b336000818152600160205260408082208290555190919083908381818185875af1925050503d8060008114610512576040519150601f19603f3d011682016040523d82523d6000602084013e610517565b606091505b505090508061055a5760405162461bcd60e51b815260206004820152600f60248201526e15da5d1a191c985dc819985a5b1959608a1b60448201526064016101f8565b5050565b6002544210156105a85760405162461bcd60e51b81526020600482015260156024820152745374696c6c206265666f726520646561646c696e6560581b60448201526064016101f8565b60008054906101000a90046001600160a01b03166001600160a01b0316639d9a7fe96040518163ffffffff1660e01b8152600401602060405180830381865afa1580156105f9573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061061d91906106f4565b1561063a5760405162461bcd60e51b81526004016101f890610716565b47670de0b6b3a764000081106106b45760008054906101000a90046001600160a01b03166001600160a01b031663522e1177826040518263ffffffff1660e01b81526004016000604051808303818588803b15801561069857600080fd5b505af11580156106ac573d6000803e3d6000fd5b505050505050565b6003805460ff1916600117905550565b6000602082840312156106d657600080fd5b81356001600160a01b03811681146106ed57600080fd5b9392505050565b60006020828403121561070657600080fd5b815180151581146106ed57600080fd5b602080825260119082015270105b1c9958591e4818dbdb5c1b195d1959607a1b604082015260600190565b634e487b7160e01b600052601160045260246000fd5b8082018082111561076a5761076a610741565b92915050565b8181038181111561076a5761076a61074156fea2646970667358221220e495401235f1f025b61a6be4b0892e56da87fc73cf575fd4f89a550b802d2e4864736f6c63430008140033",
+  "deployedBytecode": "0x60806040526004361061008a5760003560e01c80633ccfd60b116100595780633ccfd60b1461011157806342cde4e81461012657806361461954146101425780639876a643146101575780639f75f2271461018157600080fd5b80631300a6d11461009e57806327e235e3146100c657806329dcb0cf146100f35780633a4b66f11461010957600080fd5b36610099576100976101b9565b005b600080fd5b3480156100aa57600080fd5b506100b361032e565b6040519081526020015b60405180910390f35b3480156100d257600080fd5b506100b36100e13660046106c4565b60016020526000908152604090205481565b3480156100ff57600080fd5b506100b360025481565b6100976101b9565b34801561011d57600080fd5b50610097610352565b34801561013257600080fd5b506100b3670de0b6b3a764000081565b34801561014e57600080fd5b5061009761055e565b34801561016357600080fd5b506003546101719060ff1681565b60405190151581526020016100bd565b34801561018d57600080fd5b506000546101a1906001600160a01b031681565b6040516001600160a01b0390911681526020016100bd565b60025442106102015760405162461bcd60e51b815260206004820152600f60248201526e111958591b1a5b99481c185cdcd959608a1b60448201526064015b60405180910390fd5b60008054906101000a90046001600160a01b03166001600160a01b0316639d9a7fe96040518163ffffffff1660e01b8152600401602060405180830381865afa158015610252573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061027691906106f4565b156102935760405162461bcd60e51b81526004016101f890610716565b600034116102d35760405162461bcd60e51b815260206004820152600d60248201526c09aeae6e840e6cadcc8408aa89609b1b60448201526064016101f8565b33600090815260016020526040812080543492906102f2908490610757565b909155505060405134815233907febedb8b3c678666e7f36970bc8f57abf6d8fa2e828c0da91ea5b75bf68ed101a9060200160405180910390a2565b6000600254421061033f5750600090565b4260025461034d9190610770565b905090565b60025442101561039c5760405162461bcd60e51b81526020600482015260156024820152745374696c6c206265666f726520646561646c696e6560581b60448201526064016101f8565b60008054906101000a90046001600160a01b03166001600160a01b0316639d9a7fe96040518163ffffffff1660e01b8152600401602060405180830381865afa1580156103ed573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061041191906106f4565b1561042e5760405162461bcd60e51b81526004016101f890610716565b60035460ff166104775760405162461bcd60e51b81526020600482015260146024820152732bb4ba34323930bbb0b639903737ba1037b832b760611b60448201526064016101f8565b33600090815260016020526040902054806104c15760405162461bcd60e51b815260206004820152600a6024820152694e6f2062616c616e636560b01b60448201526064016101f8565b336000818152600160205260408082208290555190919083908381818185875af1925050503d8060008114610512576040519150601f19603f3d011682016040523d82523d6000602084013e610517565b606091505b505090508061055a5760405162461bcd60e51b815260206004820152600f60248201526e15da5d1a191c985dc819985a5b1959608a1b60448201526064016101f8565b5050565b6002544210156105a85760405162461bcd60e51b81526020600482015260156024820152745374696c6c206265666f726520646561646c696e6560581b60448201526064016101f8565b60008054906101000a90046001600160a01b03166001600160a01b0316639d9a7fe96040518163ffffffff1660e01b8152600401602060405180830381865afa1580156105f9573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061061d91906106f4565b1561063a5760405162461bcd60e51b81526004016101f890610716565b47670de0b6b3a764000081106106b45760008054906101000a90046001600160a01b03166001600160a01b031663522e1177826040518263ffffffff1660e01b81526004016000604051808303818588803b15801561069857600080fd5b505af11580156106ac573d6000803e3d6000fd5b505050505050565b6003805460ff1916600117905550565b6000602082840312156106d657600080fd5b81356001600160a01b03811681146106ed57600080fd5b9392505050565b60006020828403121561070657600080fd5b815180151581146106ed57600080fd5b602080825260119082015270105b1c9958591e4818dbdb5c1b195d1959607a1b604082015260600190565b634e487b7160e01b600052601160045260246000fd5b8082018082111561076a5761076a610741565b92915050565b8181038181111561076a5761076a61074156fea2646970667358221220e495401235f1f025b61a6be4b0892e56da87fc73cf575fd4f89a550b802d2e4864736f6c63430008140033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 18,
+        "contract": "contracts/Staker.sol:Staker",
+        "label": "exampleExternalContract",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_contract(ExampleExternalContract)12"
+      },
+      {
+        "astId": 22,
+        "contract": "contracts/Staker.sol:Staker",
+        "label": "balances",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_mapping(t_address,t_uint256)"
+      },
+      {
+        "astId": 27,
+        "contract": "contracts/Staker.sol:Staker",
+        "label": "deadline",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 29,
+        "contract": "contracts/Staker.sol:Staker",
+        "label": "openForWithdraw",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_bool"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bool": {
+        "encoding": "inplace",
+        "label": "bool",
+        "numberOfBytes": "1"
+      },
+      "t_contract(ExampleExternalContract)12": {
+        "encoding": "inplace",
+        "label": "contract ExampleExternalContract",
+        "numberOfBytes": "20"
+      },
+      "t_mapping(t_address,t_uint256)": {
+        "encoding": "mapping",
+        "key": "t_address",
+        "label": "mapping(address => uint256)",
+        "numberOfBytes": "32",
+        "value": "t_uint256"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}
